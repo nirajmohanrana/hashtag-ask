@@ -29,8 +29,5 @@
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any improvements, bug fixes, or new features.
 Read [Contributions File](contributions.md) to know more. ✨
 
-### License:
-This project is licensed under [License Name]. See the LICENSE file for details. 📝
-
 ### Contact:
-For any inquiries or support, reach out to [Your Contact Information]. 📧
+For any inquiries or support, reach out to [Me](https://www.linkedin.com/in/niraj-rana-2a0384193/). 📧
