@@ -28,6 +28,7 @@ The #ask platform is a modern ticketing system built with React and Firebase Fir
 
 ### Contributing:
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any improvements, bug fixes, or new features.
+Read [Contributions File](contributions.md) to know more.
 
 ### License:
 This project is licensed under [License Name]. See the LICENSE file for details.
