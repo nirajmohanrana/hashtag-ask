@@ -1,4 +1,4 @@
-# #ask
+# #ask - Open Source Ticketing System
 ## Redefining Ticket Requests
 
 ![#ask](public/assets/ask-cover.png)
