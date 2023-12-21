@@ -42,7 +42,7 @@
    - The system provides comprehensive task tracking capabilities, allowing users to monitor the status and progress of assigned tickets.
    - Managers can oversee the workload of their team, ensuring timely completion of tasks.
 
-Read [Architecture file](#ask-arch.md) to know more. ✨
+Read [Architecture file](ask-arch.md) to know more. ✨
 
 # Learning Opportunities 🚀
 
