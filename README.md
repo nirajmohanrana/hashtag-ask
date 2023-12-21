@@ -9,13 +9,13 @@
 ## Features
 
 1. **Dynamic Form (#ask) Creation** 📋
-   - Managers and Assignees have the ability to dynamically create ticket forms tailored to the specific needs of their department.
+   - Managers and Assignor have the ability to dynamically create ticket forms tailored to the specific needs of their department.
    - Forms serve as a structured means of capturing information related to issues and tasks.
 
 2. **User Roles** 👥
-   - The system distinguishes between three main user roles: Managers, Assignees and Members.
+   - The system distinguishes between three main user roles: Managers, Assignor and Members.
    - Managers are granted the privilege to manage organisation, workspace and #ask.
-   - Assignees can assign these #ask to the members of there workspace
+   - Assignor can assign these #ask to the members of there workspace
    - while Members can work and resolve on #ask.
 
 3. **Departmental Workspaces** 🏢
@@ -27,7 +27,7 @@
    - This feature promotes collaboration and facilitates the resolution of inter-departmental issues.
 
 5. **Ticket Assignment** 🎫
-   - Assignees hold the authority to assign tickets to specific members within their department.
+   - Assignor hold the authority to assign tickets to specific members within their department.
    - This functionality enables the delegation of tasks and ensures a structured workflow.
 
 6. **Real-Time Communication** 🔄
@@ -41,6 +41,8 @@
 8. **Task Tracking** 📈
    - The system provides comprehensive task tracking capabilities, allowing users to monitor the status and progress of assigned tickets.
    - Managers can oversee the workload of their team, ensuring timely completion of tasks.
+
+Read [Architecture file](#ask-arch.md) to know more. ✨
 
 # Learning Opportunities 🚀
 
