@@ -4,20 +4,22 @@
 ![#ask](public/assets/ask-cover.png)
 
 ### Overview:
-🎫 The #ask platform is a cutting-edge ticketing system designed to enhance issue management and streamline task tracking within an organization. Built using React for the frontend and Firebase Firestore as the backend, this platform offers a dynamic and collaborative approach to handling tickets across different departments.
+🎫 The #ask platform is a simple ticketing system designed to enhance issue management and streamline task tracking within an organization. Built using Next JS for the frontend and Supabase as the backend, this platform offers a dynamic and collaborative approach to handling tickets across different departments.
 
 ## Features
 
-1. **Dynamic Form Creation** 📋
-   - Managers have the ability to dynamically create ticket forms tailored to the specific needs of their department.
+1. **Dynamic Form (#ask) Creation** 📋
+   - Managers and Assignees have the ability to dynamically create ticket forms tailored to the specific needs of their department.
    - Forms serve as a structured means of capturing information related to issues and tasks.
 
 2. **User Roles** 👥
-   - The system distinguishes between two main user roles: Managers and Members.
-   - Managers are granted the privilege to create and manage ticket forms, while Members can submit and work on tickets.
+   - The system distinguishes between three main user roles: Managers, Assignees and Members.
+   - Managers are granted the privilege to manage organisation, workspace and #ask.
+   - Assignees can assign these #ask to the members of there workspace
+   - while Members can work and resolve on #ask.
 
-3. **Departmental Organization** 🏢
-   - Managers can efficiently organize their departments by adding members to their team.
+3. **Departmental Workspaces** 🏢
+   - Managers can efficiently organize their departments/workspace by adding members to their team.
    - This ensures that each department has a designated set of users with specific responsibilities.
 
 4. **Cross-Department Ticketing** ↔️
@@ -25,7 +27,7 @@
    - This feature promotes collaboration and facilitates the resolution of inter-departmental issues.
 
 5. **Ticket Assignment** 🎫
-   - Managers hold the authority to assign tickets to specific members within their department.
+   - Assignees hold the authority to assign tickets to specific members within their department.
    - This functionality enables the delegation of tasks and ensures a structured workflow.
 
 6. **Real-Time Communication** 🔄
@@ -33,45 +35,16 @@
    - Users can experience seamless and instant updates, promoting efficient communication and collaboration.
 
 7. **User Authentication** 🔐
-   - Robust user authentication mechanisms are in place to ensure secure access to the platform.
+   - For Robust and easy user authentication mechanisms we are using Google Auth.
    - This includes role-based access control to manage permissions effectively.
 
 8. **Task Tracking** 📈
    - The system provides comprehensive task tracking capabilities, allowing users to monitor the status and progress of assigned tickets.
    - Managers can oversee the workload of their team, ensuring timely completion of tasks.
 
-## Learning Opportunities
+# Learning Opportunities 🚀
 
-1. **React Development** ⚛️
-   - Gain hands-on experience in building responsive and dynamic user interfaces using React.
-
-2. **Firebase Integration** 🔥
-   - Learn how to integrate Firebase Firestore as a scalable and real-time backend solution.
-
-3. **User Authentication and Authorization** 🛡️
-   - Implement secure authentication and role-based access control to manage user permissions.
-
-4. **Dynamic Form Handling** 🔄
-   - Understand the principles of dynamic form creation and data capture for diverse ticketing needs.
-
-5. **Cross-Department Collaboration** 🌐
-   - Explore strategies for fostering collaboration and communication across different departments.
-
-6. **Database Design** 🗃️
-   - Design and implement an efficient Firestore database schema for storing ticket-related data.
-
-7. **State Management** 🔄
-   - Utilize React state management to handle dynamic changes within the application.
-
-8. **Task Management Best Practices** 📊
-   - Implement features that align with industry best practices for effective task and issue management.
-
-9. **Scalability and Performance Optimization** ⚙️
-   - Consider scalability and optimize performance to ensure the platform can handle growing amounts of data and users.
-
-10. **UI/UX Design Considerations** 🎨
-    - Explore user experience and interface design principles to create an intuitive and user-friendly platform.
-
+Embark on a dynamic learning journey with #ask's move to Next.js and Supabase! 🌟 Dive into Next.js for responsive interfaces while embracing Supabase's scalability. Explore secure authentication, role-based access, and dynamic form handling. 🛡️ Foster cross-departmental collaboration, refine Firestore databases, and elevate state management. 🗃️ Discover task management best practices, scalability tips, and UI/UX design principles. Get ready for a comprehensive modern web app development experience! ✨
 
 ### Installation:
 1. Clone the repository: `git clone https://github.com/nirajmohanrana/hashtag-ask.git`
