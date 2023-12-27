@@ -35,11 +35,13 @@ export default function Home() {
         </Link>
 
         <Link
-          className="flex-1 mx-2 text-sm hidden md:block hover:border-b"
+          className="mx-2 text-sm hidden md:block hover:border-b"
           href="/"
         >
           Community
         </Link>
+
+        <div className="flex-1" />
 
         <Link
           className="p-px px-2 font-semibold border-2 border-text bg-text text-background rounded-full"
