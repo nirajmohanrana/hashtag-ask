@@ -22,7 +22,7 @@ const initialNodes = [
   },
 ];
 
-let id = 2;
+let id = 1;
 const getId = () => `${id++}`;
 
 const CreateForm = () => {
@@ -61,12 +61,26 @@ const CreateForm = () => {
 
         setNodes((nds) => nds.concat(newNode));
         setEdges((eds) =>
-          eds.concat({ id, source: connectingNodeId.current, target: id })
+          eds.concat({
+            id,
+            source: connectingNodeId.current,
+            target: id,
+            label: `from Section ${Number(connectingNodeId.current) + 1}`,
+            labelBgStyle: { fill: "#fff" },
+            labelStyle: {
+              fill: "#e23237",
+              fontSize: "10px",
+              fontWeight: "bold",
+              textAlign: "center",
+            },
+          })
         );
       }
     },
     [screenToFlowPosition, setEdges, setNodes]
   );
+
+  const isMobile = window.innerWidth < 450;
 
   return (
     <div className="h-full" ref={reactFlowWrapper}>
@@ -80,12 +94,20 @@ const CreateForm = () => {
         onConnectEnd={onConnectEnd}
         nodeOrigin={[0.5, 0]}
       >
-        <p className="text-sm">
-          Try to drag edges from{" "}
-          <strong className="text-primary">Blue pill</strong>
-        </p>
+        {isMobile ? (
+          <p className="text-sm text-accent font-bold">
+            Please switch to Desktop
+          </p>
+        ) : (
+          <>
+            <p className="text-sm">
+              Try to drag edges from{" "}
+              <strong className="text-primary">Blue pill</strong>
+            </p>
+            <Controls />
+          </>
+        )}
         <Background />
-        <Controls />
       </ReactFlow>
     </div>
   );

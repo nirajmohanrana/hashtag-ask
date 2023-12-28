@@ -19,7 +19,7 @@ export default function Home() {
     <main className="max-w-6xl mx-auto text-text">
       {/* NAVBAR */}
 
-      <nav className="flex justify-between items-center gap-2 p-2 py-4">
+      <nav className="flex justify-between items-center gap-2 px-4 py-6">
         <Link
           className="flex-1 md:flex-none font-bold text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)]"
           href="/"
@@ -91,8 +91,8 @@ export default function Home() {
       </div>
 
       {/* CREATE FORM */}
-      <div className="my-6 flex flex-col md:flex-row px-2 divide-x divide-text/20">
-        <div className="md:w-1/2 px-2">
+      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x divide-text/20">
+        <div className="md:w-1/2 p-2">
           <h3 className={`text-3xl font-bold ${kalam.className}`}>
             Create #ask Forms With Ease
           </h3>

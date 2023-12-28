@@ -7,7 +7,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "#ask",
+  title: "ASK",
   description: "Redefining Ticket Requests",
 };
 
