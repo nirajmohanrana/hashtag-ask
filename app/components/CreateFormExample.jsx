@@ -1,5 +1,11 @@
 "use client";
-import React, { useCallback, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -41,6 +47,22 @@ const CreateForm = () => {
     connectingNodeId.current = nodeId;
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useLayoutEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < 450);
+    };
+
+    updateIsMobile();
+
+    window.addEventListener("resize", updateIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", updateIsMobile);
+    };
+  }, []);
+
   const onConnectEnd = useCallback(
     (event) => {
       if (!connectingNodeId.current) return;
@@ -73,14 +95,13 @@ const CreateForm = () => {
               fontWeight: "bold",
               textAlign: "center",
             },
+            animated: true,
           })
         );
       }
     },
     [screenToFlowPosition, setEdges, setNodes]
   );
-
-  const isMobile = window.innerWidth < 450;
 
   return (
     <div className="h-full" ref={reactFlowWrapper}>
@@ -94,7 +115,7 @@ const CreateForm = () => {
         onConnectEnd={onConnectEnd}
         nodeOrigin={[0.5, 0]}
       >
-        {isMobile ? (
+        {window?.innerWidth < 450 ? (
           <p className="text-sm text-accent font-bold">
             Please switch to Desktop
           </p>

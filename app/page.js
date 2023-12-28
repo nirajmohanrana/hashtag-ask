@@ -1,13 +1,8 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
-import { Kalam, Playpen_Sans } from "next/font/google";
+import { Playpen_Sans } from "next/font/google";
 import HoverWindow from "./components/HoverWindow";
 import CreateFormExample from "./components/CreateFormExample";
-
-const kalam = Kalam({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 const playpen = Playpen_Sans({
   weight: ["300", "400", "700"],
@@ -34,10 +29,7 @@ export default function Home() {
           About Us
         </Link>
 
-        <Link
-          className="mx-2 text-sm hidden md:block hover:border-b"
-          href="/"
-        >
+        <Link className="mx-2 text-sm hidden md:block hover:border-b" href="/">
           Community
         </Link>
 
@@ -75,7 +67,9 @@ export default function Home() {
       {/* HERO SECTION */}
 
       <div className="my-36">
-        <h1 className="font-extrabold text-4xl md:text-7xl text-center overflow-clip z-50 mb-10">
+        <h1
+          className={`font-extrabold text-4xl md:text-7xl text-center overflow-clip z-50 mb-10 ${playpen.className}`}
+        >
           <p className="bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.text),theme(colors.primary),theme(colors.secondary),theme(colors.accent),theme(colors.purple.600),theme(colors.text))] bg-[length:200%_auto] animate-gradient hover:animate-gradient">
             Redefining
           </p>
@@ -91,18 +85,37 @@ export default function Home() {
       </div>
 
       {/* CREATE FORM */}
-      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x divide-text/20">
+      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
         <div className="md:w-1/2 p-2">
-          <h3 className={`text-3xl font-bold ${kalam.className}`}>
+          <h3 className={`text-3xl font-bold ${playpen.className}`}>
             Create #ask Forms With Ease
           </h3>
 
-          <hr className="opacity-20 my-2" />
+          <section className={`text-pretty px-2 ${playpen.className}`}>
+            <p className="my-1">
+              We offers an interface that is straightforward and easy to
+              understand. Users interact to perform actions by simply dragging
+              elements within the application.
+            </p>
 
-          <p className={`text-justify tracking-wide px-2 ${playpen.className}`}>
-            We provide simple, intuitive, nodes and section based form creation
-            just drag the arrows and connect the sections
-          </p>
+            <hr className="opacity-10 my-2 mx-2" />
+
+            <ul className="px-2 list-inside list-image-[url(./favicon.ico)]">
+              <li className="my-1">
+                <span className="text-primary text-lg">Questions</span> are the
+                fields or prompts that end-users will respond to. They could be
+                text boxes, multiple-choice options, checkboxes, or any other
+                form input type where users provide information.
+              </li>
+
+              <li className="my-1">
+                <span className="text-primary text-lg">Sections</span> are like
+                containers that organize and group related questions together.
+                Sections help in structuring forms, making it easier for users
+                to navigate through categories or types of questions.
+              </li>
+            </ul>
+          </section>
         </div>
         <div className="md:w-1/2 p-2 h-72">
           <CreateFormExample />
