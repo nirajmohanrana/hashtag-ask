@@ -14,8 +14,8 @@
 }
 
 .react-flow .react-flow__node {
-  height: 80px;
-  width: 80px;
+  max-width: 80px;
+  min-height: 80px;
   justify-content: center;
   align-items: center;
   display: flex;

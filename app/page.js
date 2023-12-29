@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
+      <div className="my-6 flex flex-col-reverse md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
         <div className="md:w-1/2 p-2 h-72">
           <FormExample />
         </div>

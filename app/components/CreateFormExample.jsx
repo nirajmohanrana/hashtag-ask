@@ -23,7 +23,7 @@ const initialNodes = [
   {
     id: "0",
     type: "input",
-    data: { label: "Section 1\nQuestion 1\nQuestion 2\nQuestion 3" },
+    data: { label: "Section 1\n•Name\n•Email\n•Department" },
     position: { x: 100, y: 50 },
   },
 ];
@@ -77,7 +77,15 @@ const CreateForm = () => {
             x: event.clientX,
             y: event.clientY,
           }),
-          data: { label: `Section ${id}\nQuestion 1\nQuestion 2\nQuestion 3` },
+          data: {
+            label: `${
+              id === "1"
+                ? "Section 2\n•Ask Title\n•Ask Description\n•To-Department"
+                : id === "2"
+                ? "Section 3\n•Deadline\n•Priority"
+                : `Section ${id}\n•Question-1\n•Question-2\n•Question-3`
+            }`,
+          },
           origin: [0.5, 0.0],
         };
 

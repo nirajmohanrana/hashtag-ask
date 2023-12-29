@@ -44,7 +44,7 @@ const FormExample = () => {
         />
       </div>
       <div className="w-full h-full">
-        <form className="w-3/4 mx-auto">
+        <form className="w-full md:w-3/4 mx-auto">
           {step === 0 && (
             <div>
               <h2 className="text-lg">
