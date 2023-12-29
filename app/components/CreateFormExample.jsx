@@ -17,7 +17,7 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 
-import "./formExample.css";
+import "./createFormExample.css";
 
 const initialNodes = [
   {

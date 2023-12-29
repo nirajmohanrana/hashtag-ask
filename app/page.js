@@ -3,6 +3,7 @@ import { Github } from "lucide-react";
 import { Playpen_Sans } from "next/font/google";
 import HoverWindow from "./components/HoverWindow";
 import CreateFormExample from "./components/CreateFormExample";
+import FormExample from "./components/FormExample";
 
 const playpen = Playpen_Sans({
   weight: ["300", "400", "700"],
@@ -119,6 +120,36 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 p-2 h-72">
           <CreateFormExample />
+        </div>
+      </div>
+
+      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
+        <div className="md:w-1/2 p-2 h-72">
+          <FormExample />
+        </div>
+
+        <div className="md:w-1/2 p-2">
+          <h3 className={`text-3xl font-bold ${playpen.className}`}>
+            Fill #ask form with ease
+          </h3>
+
+          <section className={`text-pretty px-2 ${playpen.className}`}>
+            <p className="my-1">
+              Users can fill their form easily with no hassle simple sections
+              and interactable form
+            </p>
+
+            <hr className="opacity-10 my-2 mx-2" />
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              condimentum varius mi. Nullam egestas a purus a rutrum. Sed varius
+              euismod eros a convallis. Cras urna enim, aliquam ut porttitor et,
+              mattis in dolor. Fusce luctus erat non justo interdum, sed congue
+              dolor bibendum. Mauris mollis venenatis urna in porta. Sed ac
+              suscipit dui, sit amet tristique purus.
+            </p>
+          </section>
         </div>
       </div>
 

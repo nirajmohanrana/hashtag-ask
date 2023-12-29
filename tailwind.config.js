@@ -13,6 +13,7 @@ module.exports = {
         primary: "#00d3ff",
         secondary: "#2193b0",
         accent: "#e23237",
+        "toast-bg": "#57C1EA",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
