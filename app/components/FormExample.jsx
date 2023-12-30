@@ -18,7 +18,7 @@ const FormExample = () => {
     askDescription:
       "Need files and brief information about billing occured in last week",
     toDepartment: "Marketing",
-    date: "",
+    date: new Date().toISOString().split("T")[0],
     priority: "Low",
   });
 

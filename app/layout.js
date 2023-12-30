@@ -16,6 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Toaster
+        closeButton
+        important
+        cancel
         toastOptions={{
           unstyled: true,
           classNames: {

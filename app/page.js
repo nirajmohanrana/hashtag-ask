@@ -1,15 +1,9 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
-import { Playpen_Sans } from "next/font/google";
 import HoverWindow from "./components/HoverWindow";
 import CreateFormExample from "./components/CreateFormExample";
 import FormExample from "./components/FormExample";
 import BoardExample from "./components/BoardExample";
-
-const playpen = Playpen_Sans({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -92,7 +86,7 @@ export default function Home() {
       </div>
 
       {/* CREATE FORM */}
-      <div className="my-32 flex flex-col md:flex-row md:items-center px-2">
+      <div className="my-20 flex flex-col md:flex-row md:items-center px-2">
         <div className="md:w-1/2 m-2 px-10 text-justify">
           <h3 className="text-3xl font-bold">Create #ask Forms With Ease</h3>
 
@@ -130,7 +124,7 @@ export default function Home() {
       <hr className="opacity-10 my-2 mx-2" />
 
       {/* USER FORM */}
-      <div className="my-32 flex flex-col-reverse md:flex-row md:items-center px-2">
+      <div className="my-20 flex flex-col-reverse md:flex-row md:items-center px-2">
         <div className="md:w-1/2 p-4 border border-text/60 rounded-lg">
           <FormExample />
         </div>
@@ -141,17 +135,14 @@ export default function Home() {
           <hr className="opacity-10 my-2" />
           <section>
             <p className="my-1">
-              Users can fill their form easily with no hassle simple sections
-              and interactable form
+              The form aims to provide users with an effortless experience by
+              breaking it into straightforward sections. Each section is
+              designed for easy navigation and interaction, ensuring a
+              user-friendly process.
             </p>
-
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              condimentum varius mi. Nullam egestas a purus a rutrum. Sed varius
-              euismod eros a convallis. Cras urna enim, aliquam ut porttitor et,
-              mattis in dolor. Fusce luctus erat non justo interdum, sed congue
-              dolor bibendum. Mauris mollis venenatis urna in porta. Sed ac
-              suscipit dui, sit amet tristique purus.
+              This approach minimizes complexity, enabling users to engage with
+              the form comfortably and complete it efficiently.
             </p>
           </section>
         </div>
@@ -160,25 +151,18 @@ export default function Home() {
       <hr className="opacity-10 my-2 mx-2" />
 
       {/* USER BOARD */}
-      <div className="my-32 flex flex-col-reverse md:flex-row px-2">
+      <div className="my-20 flex flex-col-reverse md:flex-row md:items-center px-2">
         <div className="md:w-1/2 m-2 px-10 text-justify">
           <h3 className="text-3xl font-bold">Easy To Manage Boards</h3>
+          <hr className="opacity-10 my-2" />
 
           <section>
             <p className="my-1">
-              Users can fill their form easily with no hassle simple sections
-              and interactable form
-            </p>
-
-            <hr className="opacity-10 my-2 mx-2" />
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              condimentum varius mi. Nullam egestas a purus a rutrum. Sed varius
-              euismod eros a convallis. Cras urna enim, aliquam ut porttitor et,
-              mattis in dolor. Fusce luctus erat non justo interdum, sed congue
-              dolor bibendum. Mauris mollis venenatis urna in porta. Sed ac
-              suscipit dui, sit amet tristique purus.
+              A Kanban-style interface specifically crafted for streamlined #ask
+              management. This Kanban board provides intuitive controls for
+              users to categorize, prioritize, and track these tickets through
+              different stages or columns, ensuring a simplified and efficient
+              management process.
             </p>
           </section>
         </div>

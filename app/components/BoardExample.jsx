@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Confetti from "react-dom-confetti";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const initialData = {
@@ -59,7 +58,6 @@ const initialData = {
 
 const BoardExample = () => {
   const [tasks, setTasks] = useState(initialData);
-  const [showConfetti, setShowConfetti] = useState(false);
 
   const onDragEnd = (result) => {
     const { destination, source, draggableId } = result;
@@ -122,29 +120,7 @@ const BoardExample = () => {
       };
 
       setTasks(newTasks);
-
-      if (result.destination.droppableId === "column-3") {
-        setShowConfetti(true);
-
-        setTimeout(() => {
-          setShowConfetti(false);
-        }, 2000);
-      }
     }
-  };
-
-  const config = {
-    angle: 90,
-    spread: 360,
-    startVelocity: 40,
-    elementCount: 70,
-    dragFriction: 0.12,
-    duration: 3000,
-    stagger: 3,
-    width: "10px",
-    height: "10px",
-    perspective: "500px",
-    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
   };
 
   const Column = ({ column, tasks }) => {
@@ -179,11 +155,10 @@ const BoardExample = () => {
         >
           {column.title}
         </h3>
-        {showConfetti && <Confetti config={config} className="absolute z-50" />}
 
         <Droppable droppableId={column.id}>
           {(provided, snapshot) => {
-            const combinedClass = `space-y-4 ${
+            const combinedClass = `space-y-4 h-60 ${
               snapshot.isDraggingOver
                 ? "bg-slate-600 min-h-full rounded-md"
                 : ""
