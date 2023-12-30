@@ -129,7 +129,7 @@ const CreateForm = () => {
           </p>
         ) : (
           <>
-            <p className="text-sm">
+            <p className="text-xs">
               Try to drag edges from{" "}
               <strong className="text-primary">Blue pill</strong>
             </p>

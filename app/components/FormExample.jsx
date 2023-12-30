@@ -31,22 +31,21 @@ const FormExample = () => {
   const options = ["Sales", "Marketing", "Research & Development", "Accounts"];
 
   return (
-    <div className="flex gap-6 w-full h-full">
-      <div className="h-full">
+    <div className="w-full h-full">
+      <div className="w-11/12 mx-auto mb-8">
         <Slider
-          vertical
           min={0}
           max={2}
           startPoint={0}
           marks={marks}
           value={step}
           defaultValue={0}
-          reverse
           disabled
         />
       </div>
+
       <div className="w-full h-full">
-        <form className="w-full md:w-3/4 mx-auto">
+        <form className="w-11/12 mx-auto">
           {step === 0 && (
             <div>
               <h2 className="text-lg">
@@ -271,7 +270,15 @@ const FormExample = () => {
                 <ChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
               </div>
 
-              <div className="w-full flex justify-end my-2">
+              <div className="w-full flex justify-between my-2">
+                <button
+                  type="button"
+                  className="bg-secondary px-2 py-1 rounded-md"
+                  onClick={() => setStep((prevStep) => prevStep - 1)}
+                >
+                  Prev
+                </button>
+
                 <button
                   type="button"
                   disabled={loading}

@@ -70,16 +70,18 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-
       <div className="my-36">
-        <h1
-          className={`font-extrabold text-4xl md:text-7xl text-center overflow-clip z-50 mb-10 ${playpen.className}`}
+        <p
+          className={
+            "select-none font-extrabold text-4xl md:text-7xl text-center mb-10"
+          }
         >
-          <p className="bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.text),theme(colors.primary),theme(colors.secondary),theme(colors.accent),theme(colors.purple.600),theme(colors.text))] bg-[length:200%_auto] animate-gradient hover:animate-gradient">
+          <span className="bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.text),theme(colors.primary),theme(colors.secondary),theme(colors.accent),theme(colors.purple.600),theme(colors.text))] bg-[length:200%_auto] animate-gradient hover:animate-gradient">
             Redefining
-          </p>
-          <p className="text-text">Ticket Requests</p>
-        </h1>
+          </span>
+          <br />
+          <span className="text-text">Ticket Requests</span>
+        </p>
 
         <div className="flex justify-center">
           <HoverWindow customClass="-rotate-12">#ask</HoverWindow>
@@ -90,61 +92,58 @@ export default function Home() {
       </div>
 
       {/* CREATE FORM */}
-      <div className="my-6 flex flex-col md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
-        <div className="md:w-1/2 p-2">
-          <h3 className={`text-3xl font-bold ${playpen.className}`}>
-            Create #ask Forms With Ease
-          </h3>
+      <div className="my-32 flex flex-col md:flex-row md:items-center px-2">
+        <div className="md:w-1/2 m-2 px-10 text-justify">
+          <h3 className="text-3xl font-bold">Create #ask Forms With Ease</h3>
 
-          <section className={`text-pretty px-2 ${playpen.className}`}>
-            <p className="my-1">
-              We offers an interface that is straightforward and easy to
-              understand. Users interact to perform actions by simply dragging
-              elements within the application.
-            </p>
+          <hr className="opacity-10 my-2" />
 
-            <hr className="opacity-10 my-2 mx-2" />
+          <section>
+            <p className="my-1">Simply Drag & Drop and create #ask Forms</p>
 
-            <ul className="px-2 list-inside list-image-[url(./favicon.ico)]">
-              <li className="my-1">
-                <span className="text-primary text-lg">Questions</span> are the
-                fields or prompts that end-users will respond to. They could be
-                text boxes, multiple-choice options, checkboxes, or any other
-                form input type where users provide information.
+            <ul>
+              <li className="text-primary text-lg mt-1 font-semibold">
+                Questions
+              </li>
+              <li className="mb-1">
+                are the fields or prompts that end-users will respond to. They
+                could be text, multiple-choice options and more
               </li>
 
-              <li className="my-1">
-                <span className="text-primary text-lg">Sections</span> are like
-                containers that organize and group related questions together.
-                Sections help in structuring forms, making it easier for users
-                to navigate through categories or types of questions.
+              <li className="text-primary text-lg mt-1 font-semibold">
+                Sections
+              </li>
+              <li className="mb-1">
+                are like containers that organize and group related questions
+                together. Sections help in structuring forms, making it easier
+                for users to navigate.
               </li>
             </ul>
           </section>
         </div>
-        <div className="md:w-1/2 p-2 h-72">
+
+        <div className="md:w-1/2 h-72 p-2 border border-text/60 rounded-lg">
           <CreateFormExample />
         </div>
       </div>
 
+      <hr className="opacity-10 my-2 mx-2" />
+
       {/* USER FORM */}
-      <div className="my-6 flex flex-col-reverse md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
-        <div className="md:w-1/2 p-2 h-72">
+      <div className="my-32 flex flex-col-reverse md:flex-row md:items-center px-2">
+        <div className="md:w-1/2 p-4 border border-text/60 rounded-lg">
           <FormExample />
         </div>
 
-        <div className="md:w-1/2 p-2">
-          <h3 className={`text-3xl font-bold ${playpen.className}`}>
-            Fill #ask form with ease
-          </h3>
+        <div className="md:w-1/2 m-2 px-10 text-justify">
+          <h3 className="text-3xl font-bold">Fill #ask form with ease</h3>
 
-          <section className={`text-pretty px-2 ${playpen.className}`}>
+          <hr className="opacity-10 my-2" />
+          <section>
             <p className="my-1">
               Users can fill their form easily with no hassle simple sections
               and interactable form
             </p>
-
-            <hr className="opacity-10 my-2 mx-2" />
 
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -158,14 +157,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* USER BOARD */}
-      <div className="my-6 flex flex-col-reverse md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
-        <div className="md:w-1/2 p-2">
-          <h3 className={`text-3xl font-bold ${playpen.className}`}>
-            Easy To Manage Boards
-          </h3>
+      <hr className="opacity-10 my-2 mx-2" />
 
-          <section className={`text-pretty px-2 ${playpen.className}`}>
+      {/* USER BOARD */}
+      <div className="my-32 flex flex-col-reverse md:flex-row px-2">
+        <div className="md:w-1/2 m-2 px-10 text-justify">
+          <h3 className="text-3xl font-bold">Easy To Manage Boards</h3>
+
+          <section>
             <p className="my-1">
               Users can fill their form easily with no hassle simple sections
               and interactable form
@@ -184,7 +183,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="md:w-1/2 h-72">
+        <div className="md:w-1/2 p-4 border border-text/60 rounded-lg">
           <BoardExample />
         </div>
       </div>
@@ -193,7 +192,7 @@ export default function Home() {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <div className="mb-4 md:mb-0">
             <Link
-              className="flex-1 md:flex-none font-bold text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)]"
+              className="flex-1 mb-4 md:flex-none font-bold text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)]"
               href="/"
             >
               #ask
