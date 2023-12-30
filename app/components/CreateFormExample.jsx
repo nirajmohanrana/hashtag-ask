@@ -123,7 +123,7 @@ const CreateForm = () => {
         onConnectEnd={onConnectEnd}
         nodeOrigin={[0.5, 0]}
       >
-        {window?.innerWidth < 450 ? (
+        {typeof window !== "undefined" && window.innerWidth < 450 ? (
           <p className="text-sm text-accent font-bold">
             Please switch to Desktop
           </p>

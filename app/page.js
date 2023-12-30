@@ -4,6 +4,7 @@ import { Playpen_Sans } from "next/font/google";
 import HoverWindow from "./components/HoverWindow";
 import CreateFormExample from "./components/CreateFormExample";
 import FormExample from "./components/FormExample";
+import BoardExample from "./components/BoardExample";
 
 const playpen = Playpen_Sans({
   weight: ["300", "400", "700"],
@@ -24,13 +25,16 @@ export default function Home() {
         </Link>
 
         <Link
-          className="ml-8 mx-2 text-sm hidden md:block hover:border-b"
+          className="ml-8 mx-2 text-sm hidden md:block hover:text-accent hover:underline"
           href="/about-us"
         >
           About Us
         </Link>
 
-        <Link className="mx-2 text-sm hidden md:block hover:border-b" href="/">
+        <Link
+          className="mx-2 text-sm hidden md:block hover:text-accent hover:underline"
+          href="/"
+        >
           Community
         </Link>
 
@@ -123,6 +127,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* USER FORM */}
       <div className="my-6 flex flex-col-reverse md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
         <div className="md:w-1/2 p-2 h-72">
           <FormExample />
@@ -153,8 +158,66 @@ export default function Home() {
         </div>
       </div>
 
-      <div></div>
-      <div></div>
+      {/* USER BOARD */}
+      <div className="my-6 flex flex-col-reverse md:flex-row px-2 divide-y md:divide-x md:divide-y-0 divide-text/20">
+        <div className="md:w-1/2 p-2">
+          <h3 className={`text-3xl font-bold ${playpen.className}`}>
+            Easy To Manage Boards
+          </h3>
+
+          <section className={`text-pretty px-2 ${playpen.className}`}>
+            <p className="my-1">
+              Users can fill their form easily with no hassle simple sections
+              and interactable form
+            </p>
+
+            <hr className="opacity-10 my-2 mx-2" />
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              condimentum varius mi. Nullam egestas a purus a rutrum. Sed varius
+              euismod eros a convallis. Cras urna enim, aliquam ut porttitor et,
+              mattis in dolor. Fusce luctus erat non justo interdum, sed congue
+              dolor bibendum. Mauris mollis venenatis urna in porta. Sed ac
+              suscipit dui, sit amet tristique purus.
+            </p>
+          </section>
+        </div>
+
+        <div className="md:w-1/2 h-72">
+          <BoardExample />
+        </div>
+      </div>
+
+      <footer className="border-t py-6">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+          <div className="mb-4 md:mb-0">
+            <Link
+              className="flex-1 md:flex-none font-bold text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)]"
+              href="/"
+            >
+              #ask
+            </Link>
+            <p className="text-sm">
+              © {new Date().getFullYear()} All rights reserved.
+            </p>
+          </div>
+          <nav className="flex items-center justify-center md:justify-end space-x-4">
+            <Link
+              href="/"
+              className="text-sm hover:text-accent hover:underline transition-colors duration-300"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/"
+              className="text-sm hover:text-accent hover:underline transition-colors duration-300"
+            >
+              Community
+            </Link>
+          </nav>
+        </div>
+      </footer>
     </main>
   );
 }

@@ -4,10 +4,12 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Slider from "rc-slider";
 import "./formExample.css";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Loader } from "lucide-react";
 
 const FormExample = () => {
   const [step, setStep] = useState(0);
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "John Doe",
     email: "john.doe@mail.com",
@@ -272,28 +274,57 @@ const FormExample = () => {
               <div className="w-full flex justify-end my-2">
                 <button
                   type="button"
-                  className="bg-secondary px-2 py-1 rounded-md"
+                  disabled={loading}
+                  className={`px-2 py-1 rounded-md ${
+                    loading ? "bg-slate-600" : "bg-secondary "
+                  }`}
                   onClick={() => {
-                    if (formData.date && formData.priority)
-                      toast(
-                        <div className="text-xs leading-tight">
-                          <h4 className="font-bold">
-                            Your #ask successfully raised
-                          </h4>
-                          <div>
-                            {Object.entries(formData).map(([key, value]) => (
-                              <div key={key} className="flex gap-1">
-                                <label>{key}:</label>
-                                <div className="underline">{value}</div>
-                              </div>
-                            ))}
+                    if (formData.date && formData.priority) {
+                      setLoading(true);
+
+                      setTimeout(() => {
+                        toast(
+                          <div className="text-xs leading-tight">
+                            <h4 className="font-bold">
+                              Your #ask successfully raised
+                            </h4>
+                            <div>
+                              <table className="border-collapse">
+                                <tbody>
+                                  {Object.entries(formData).map(
+                                    ([key, value]) => {
+                                      function capitalizeString(str) {
+                                        return str
+                                          .replace(/([A-Z])/g, " $1")
+                                          .replace(/^./, str[0].toUpperCase())
+                                          .trim();
+                                      }
+
+                                      return (
+                                        <tr key={key}>
+                                          <td className="w-1/3">
+                                            {capitalizeString(key)}:
+                                          </td>
+                                          <td className="w-full font-bold">
+                                            {value}
+                                          </td>
+                                        </tr>
+                                      );
+                                    }
+                                  )}
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
-                        </div>
-                      );
-                    else toast.error("Please fill all required inputs");
+                        );
+
+                        setLoading(false);
+                        setStep(0);
+                      }, 500);
+                    } else toast.error("Please fill all required inputs");
                   }}
                 >
-                  Submit
+                  {loading ? <Loader className="animate-spin" /> : "Submit"}
                 </button>
               </div>
             </div>

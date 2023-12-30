@@ -23,7 +23,7 @@
 .rc-slider-tracks {
   position: absolute;
   height: 4px;
-  background-color: #abe2fb;
+  background-color: #96dbfa;
   border-radius: 6px;
 }
 .rc-slider-track-draggable {
@@ -41,7 +41,7 @@
   height: 14px;
   margin-top: -5px;
   background-color: #fff;
-  border: solid 2px #96dbfa;
+  border: solid 2px #00d3ff;
   border-radius: 50%;
   cursor: default;
   cursor: -webkit-default;
@@ -51,7 +51,7 @@
 }
 .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
   border-color: #57c5f7;
-  box-shadow: 0 0 0 5px #96dbfa;
+  box-shadow: 0 0 0 5px #00d3ff;
 }
 .rc-slider-handle:focus {
   outline: none;
@@ -59,10 +59,10 @@
 }
 .rc-slider-handle:focus-visible {
   border-color: #2db7f5;
-  box-shadow: 0 0 0 3px #96dbfa;
+  box-shadow: 0 0 0 3px #00d3ff;
 }
 .rc-slider-handle-click-focused:focus {
-  border-color: #96dbfa;
+  border-color: #00d3ff;
   box-shadow: unset;
 }
 .rc-slider-handle:hover {
@@ -110,7 +110,7 @@
   cursor: default;
 }
 .rc-slider-dot-active {
-  border-color: #96dbfa;
+  border-color: #00d3ff;
 }
 .rc-slider-dot-reverse {
   margin-right: -4px;
