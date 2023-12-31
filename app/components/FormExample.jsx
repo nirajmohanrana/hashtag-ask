@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Slider from "rc-slider";
 import "./formExample.css";
-import { ChevronDown, Loader } from "lucide-react";
+import { LuChevronDown, LuLoader } from "react-icons/lu";
 
 const FormExample = () => {
   const [step, setStep] = useState(0);
@@ -105,7 +105,7 @@ const FormExample = () => {
                   })}
                 </select>
 
-                <ChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
+                <LuChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
               </div>
 
               <div className="w-full flex justify-end my-2">
@@ -190,7 +190,7 @@ const FormExample = () => {
                     ))}
                 </select>
 
-                <ChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
+                <LuChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
               </div>
 
               <div className="w-full flex justify-between my-2">
@@ -267,7 +267,7 @@ const FormExample = () => {
                   <option>High</option>
                 </select>
 
-                <ChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
+                <LuChevronDown className="absolute text-sm top-1/2 right-3 text-background" />
               </div>
 
               <div className="w-full flex justify-between my-2">
@@ -331,7 +331,7 @@ const FormExample = () => {
                     } else toast.error("Please fill all required inputs");
                   }}
                 >
-                  {loading ? <Loader className="animate-spin" /> : "Submit"}
+                  {loading ? <LuLoader className="animate-spin" /> : "Submit"}
                 </button>
               </div>
             </div>

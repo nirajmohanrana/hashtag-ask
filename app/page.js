@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
 import HoverWindow from "./components/HoverWindow";
 import CreateFormExample from "./components/CreateFormExample";
 import FormExample from "./components/FormExample";
@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main className="max-w-6xl mx-auto text-text">
       {/* NAVBAR */}
-
       <nav className="flex justify-between items-center gap-2 px-4 py-6">
         <Link
           className="flex-1 md:flex-none font-bold text-2xl [text-shadow:_0_1px_10px_rgb(255_255_255_/_40%)]"
@@ -36,7 +35,7 @@ export default function Home() {
 
         <Link
           className="p-px px-2 font-semibold border-2 border-text bg-text text-background rounded-full"
-          href="/login"
+          href="/get-started"
         >
           Get Started
         </Link>
@@ -47,7 +46,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Github strokeWidth={2} size={18} />
+          <LuGithub strokeWidth={2} size={18} />
           <p className="hidden md:block font-normal">Star us on GitHub</p>
         </a>
       </nav>

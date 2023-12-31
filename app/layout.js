@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { AuthContextProvider } from "@/context/AuthContext";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -29,7 +30,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`bg-background ${poppins.className}`}>{children}</body>
+      <body
+        className={`bg-background w-full md:max-w-6xl mx-auto text-text ${poppins.className}`}
+      >
+        <AuthContextProvider>{children}</AuthContextProvider>
+      </body>
     </html>
   );
 }

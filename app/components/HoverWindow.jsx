@@ -8,7 +8,9 @@ function HoverWindow({ children, customClass }) {
         <div className="bg-yellow-500 h-2 aspect-square rounded-full mx-1" />
         <div className="bg-red-500 h-2 aspect-square rounded-full mr-1" />
       </div>
-      <div className="px-2 text-lg py-1">{children}</div>
+      <div className="px-2 text-lg py-1">
+        {children}
+      </div>
     </div>
   );
 }
