@@ -1,18 +1,31 @@
 "use client";
+import Link from "next/link";
 
 import { LuGithub } from "react-icons/lu";
+import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import Link from "next/link";
-import React, { useContext } from "react";
 import HoverWindow from "../components/HoverWindow";
-import { AuthContext } from "@/context/AuthContext";
+
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
 
 const GetStarted = () => {
-  const { googleSignIn } = useContext(AuthContext);
+  const supabase = createClientComponentClient();
+  const router = useRouter();
 
-  const handleSignIn = async () => {
-    console.log("sign in click");
-    googleSignIn();
+  const handleSignIn = async (provider) => {
+    await supabase.auth.signInWithOAuth({
+      provider: provider,
+      options: {
+        queryParams: {
+          access_type: "offline",
+          prompt: "consent",
+        },
+        redirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+
+    router.refresh();
   };
 
   return (
@@ -59,21 +72,33 @@ const GetStarted = () => {
             "select-none font-extrabold text-4xl md:text-7xl text-center mb-10"
           }
         >
+          <span className="text-text">SignIn To </span>
           <span className="bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.text),theme(colors.primary),theme(colors.secondary),theme(colors.accent),theme(colors.purple.600),theme(colors.text))] bg-[length:200%_auto] animate-gradient hover:animate-gradient">
-            Login To
+            Get Started
           </span>
-
-          <span className="text-text">Get Started</span>
         </p>
 
         <div className="flex justify-center">
+          <HoverWindow customClass="rotate-0" hover={false}>
+            Sign In With:
+          </HoverWindow>
+
           <HoverWindow customClass="-rotate-6">
-            <button
+            <div
               className="flex items-center justify-center gap-1"
-              onClick={handleSignIn}
+              onClick={() => handleSignIn("google")}
             >
-              <FcGoogle /> Sign In
-            </button>
+              <FcGoogle /> Google
+            </div>
+          </HoverWindow>
+
+          <HoverWindow customClass="rotate-12">
+            <div
+              className="flex items-center justify-center gap-1"
+              onClick={() => handleSignIn("github")}
+            >
+              <FaGithub className="text-text" /> GitHub
+            </div>
           </HoverWindow>
         </div>
       </div>
