@@ -22,10 +22,11 @@ const GetStarted = () => {
     await supabase.auth.signInWithOAuth({
       provider: provider,
       options: {
-        redirectTo: `${baseURL}/auth/callback`,
+        // redirectTo: `${baseURL}/auth/callback`,
+        skipBrowserRedirect: true
       },
     });
-
+    
     router.refresh();
   };
 
