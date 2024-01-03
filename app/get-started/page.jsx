@@ -23,7 +23,6 @@ const GetStarted = () => {
       provider: provider,
       options: {
         // redirectTo: `${baseURL}/auth/callback`,
-        skipBrowserRedirect: true
       },
     });
     
