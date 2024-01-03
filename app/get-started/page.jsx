@@ -12,16 +12,17 @@ import { useRouter } from "next/navigation";
 const GetStarted = () => {
   const supabase = createClientComponentClient();
   const router = useRouter();
+  
+  const baseURL =
+    typeof window !== "undefined"
+      ? `${window.location.origin}`
+      : "https://hashtag-ask.vercel.app";
 
   const handleSignIn = async (provider) => {
     await supabase.auth.signInWithOAuth({
       provider: provider,
       options: {
-        queryParams: {
-          access_type: "offline",
-          prompt: "consent",
-        },
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `${baseURL}/auth/callback`,
       },
     });
 
