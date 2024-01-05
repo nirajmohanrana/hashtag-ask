@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
+// import "./BoardExample.css"
 const initialData = {
+  
   tasks: {
     "ask-1": {
       id: "ask-1",
@@ -57,6 +58,21 @@ const initialData = {
 };
 
 const BoardExample = () => {
+
+  const [hoverClass, setHoverClass] = useState([]);
+
+  const handleMouseEnter = (taskId) => {
+      setHoverClass(() => ({
+        [taskId]: "line-clamp-none",
+      }));
+  }
+  
+  const handleMouseLeave = (taskId) => {
+      setHoverClass(() => ({
+        [taskId]: "",
+      }));
+  }
+
   const [tasks, setTasks] = useState(initialData);
 
   const onDragEnd = (result) => {
@@ -125,6 +141,9 @@ const BoardExample = () => {
 
   const Column = ({ column, tasks }) => {
     const Task = ({ task, index }) => {
+      const taskId = task.id;
+      const taskHoverClass = hoverClass[taskId] || ""; 
+      
       return (
         <Draggable draggableId={task.id} index={index}>
           {(provided) => (
@@ -132,12 +151,13 @@ const BoardExample = () => {
               ref={provided.innerRef}
               {...provided.draggableProps}
               {...provided.dragHandleProps}
-              className="w-full bg-slate-700 p-2 rounded-md shadow-sm"
+              className={`w-full bg-slate-700 p-2 rounded-md shadow-sm `}
+              
               title={task.id + "\n" + task.content + "\n" + task.description}
             >
               <p className="text-[10px] font-mono">[{task.id}]</p>
-              <p className="text-sm">{task.content}</p>
-              <p className="text-xs text-text/45 line-clamp-1 hover:line-clamp-none">
+              <p className="text-sm" onMouseEnter={() => handleMouseEnter(taskId)} onMouseLeave={() => handleMouseLeave(taskId)} >{task.content}</p>
+              <p className={`text-xs text-text/45 line-clamp-1 hover:line-clamp-none ${ hoverClass[taskId]}`}>
                 {task.description}
               </p>
             </div>
