@@ -51,7 +51,9 @@ Embark on a dynamic learning journey with #ask's move to Next.js and Supabase! ð
 ### Installation:
 1. Clone the repository: `git clone https://github.com/nirajmohanrana/hashtag-ask.git`
 2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
+3. Change `.env.example` to `.env.local`
+4. Change Supabase URL Key and Anon Key with your own key
+5. Start the development server: `npm run dev`
 
 ### Tech Stack:
 - Next JS
