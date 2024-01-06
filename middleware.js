@@ -5,5 +5,18 @@ export async function middleware(req) {
   const res = NextResponse.next();
   const supabase = createMiddlewareClient({ req, res });
   await supabase.auth.getSession();
-  return;
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // if (user && req.nextUrl.pathname === "/") {
+  //   return NextResponse.redirect(new URL("/workspace", req.url));
+  // }
+
+  if (!user && req.nextUrl.pathname !== "/") {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
+
+  return res;
 }
