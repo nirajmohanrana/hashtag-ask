@@ -115,7 +115,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="md:w-1/2 h-72 p-2 border border-text/60 rounded-lg">
+        <div className="md:w-1/2 h-72 p-4 border border-text/60 rounded-lg">
           <CreateFormExample />
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="md:w-1/2 p-4 border border-text/60 rounded-lg">
+        <div className="md:w-1/2 p-4 border border-text/60 rounded-lg overflow-x-auto overflow-hidden">
           <BoardExample />
         </div>
       </div>

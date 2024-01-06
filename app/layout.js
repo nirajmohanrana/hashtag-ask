@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`bg-background w-full md:max-w-6xl mx-auto text-text ${poppins.className}`}
+        className={`bg-background w-full md:max-w-7xl mx-auto text-text ${poppins.className}`}
       >
         {children}
       </body>
