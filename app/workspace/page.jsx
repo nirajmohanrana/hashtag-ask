@@ -1,7 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-const Dashboard = async () => {
+const Workspace = async () => {
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });
 
@@ -11,7 +11,7 @@ const Dashboard = async () => {
 
   return (
     <div>
-      Dashboard
+      Workspace
       <br />
       Hii
       {Object.entries(user).map(([key, value]) => {
@@ -33,4 +33,4 @@ const Dashboard = async () => {
   );
 };
 
-export default Dashboard;
+export default Workspace;
