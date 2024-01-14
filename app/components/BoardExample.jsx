@@ -151,11 +151,11 @@ const BoardExample = () => {
               ref={provided.innerRef}
               {...provided.draggableProps}
               {...provided.dragHandleProps}
-              className={`w-full bg-slate-700 p-2 rounded-md shadow-sm `}
+              className={`w-full bg-slate-700 p-2 rounded-md shadow-sm`}
               
               title={task.id + "\n" + task.content + "\n" + task.description}
             >
-              <p className="text-[10px] font-mono">[{task.id}]</p>
+              <p className="text-[10px] overflow-x-scroll font-mono">[{task.id}]</p>
               <p className="text-sm" onMouseEnter={() => handleMouseEnter(taskId)} onMouseLeave={() => handleMouseLeave(taskId)} >{task.content}</p>
               <p className={`text-xs text-text/45 line-clamp-1 hover:line-clamp-none ${ hoverClass[taskId]}`}>
                 {task.description}
@@ -203,7 +203,7 @@ const BoardExample = () => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div className="flex justify-center space-x-4 p-4 relative">
+      <div className="inline-flex justify-center space-x-4 p-4 relative">
         {tasks.columnOrder.map((columnId) => {
           const column = tasks.columns[columnId];
           const tasksInColumn = column.taskIds.map(
