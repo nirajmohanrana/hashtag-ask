@@ -166,7 +166,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div className="md:w-1/2 p-4 border border-text/60 rounded-lg">
+        <div className="md:w-1/2 p-4 overflow-x-scroll border border-text/60 rounded-lg">
           <BoardExample />
         </div>
       </div>
